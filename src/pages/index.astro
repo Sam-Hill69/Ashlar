@@ -1,11 +1,127 @@
 ---
-import Welcome from '../components/Welcome.astro';
-import Layout from '../layouts/Layout.astro';
-
-// Welcome to Astro! Wondering what to do next? Check out the Astro documentation at https://docs.astro.build
-// Don't want to use any of this? Delete everything in this file, the `assets`, `components`, and `layouts` directories, and start fresh.
+import BaseLayout from "../layouts/Layout.astro";
 ---
 
-<Layout>
-	<Welcome />
-</Layout>
+<BaseLayout title="Homepage">
+	<section class="hero">
+		<h1>Welcome to Ashlar Tech Solutions</h1>
+		<p class="tagline">
+			We provide the infrastructure, tools, and expertise to help you thrive in a digital world. 
+			Whether you're scaling a business or streamlining your home, we make technology work for you—not the other way around.
+		</p>
+		<a href="/contact" class="cta-button">Elevate Your Tech Experience</a>
+	</section>
+
+	<section class="philosophy">
+		<div class="philosophy-content">
+			<h3>Our Foundation</h3>
+			<p>
+				We believe technology should be a solid foundation, not a fractured burden. 
+				We combine technical rigor with a human-centric approach to ensure your systems are as reliable as they are advanced.
+			</p>
+			<p>
+				We see your business or organization as a grand structure. Each system—your network, your software, your hardware—is a stone in that building. 
+				If the stones are rough and irregular, the foundation becomes unstable. We specialize in smoothing those edges, 
+				ensuring every piece of your technology fits together perfectly to support your mission.
+			</p>
+		</div>
+	</section>
+
+	<section class="feature-grid">
+		<div class="feature-card">
+			<h3>Managed Support</h3>
+			<p>
+				Reliable IT support tailored for organizations. We handle the "tech headaches" so your team can focus on what they do best. 
+				From troubleshooting to long-term maintenance, we ensure your operations remain uninterrupted.
+			</p>
+		</div>
+
+		<div class="feature-card">
+			<h3>Strategic Growth</h3>
+			<p>
+				We don't just build websites; we develop high-converting digital storefronts designed to attract and retain your ideal customers. 
+				Stay ahead of the curve with resources designed to teach motivated individuals the latest industry standards.
+			</p>
+		</div>
+	</section>
+</BaseLayout>
+
+<style>
+	.hero {
+		text-align: center;
+		padding: 5rem 1rem;
+		background: #f9fafb;
+		border-radius: 24px;
+		margin-bottom: 4rem;
+	}
+
+	h1 {
+		font-size: 3rem;
+		color: #111827;
+		margin-bottom: 1.5rem;
+	}
+
+	.tagline {
+		font-size: 1.25rem;
+		max-width: 800px;
+		margin: 0 auto 2rem;
+		color: #4b5563;
+	}
+
+	.cta-button {
+		display: inline-block;
+		background: #3245ff;
+		color: white;
+		padding: 1rem 2.5rem;
+		border-radius: 12px;
+		text-decoration: none;
+		font-weight: 600;
+		transition: all 0.2s ease;
+	}
+
+	.cta-button:hover {
+		background: #bc52ee;
+		transform: translateY(-2px);
+	}
+
+	.philosophy {
+		background: white;
+		padding: 4rem 2rem;
+		border: 1px solid #e5e7eb;
+		border-radius: 20px;
+		margin-bottom: 4rem;
+		text-align: center;
+	}
+
+	.philosophy-content {
+		max-width: 750px;
+		margin: 0 auto;
+	}
+
+	.feature-grid {
+		display: grid;
+		grid-template-columns: 1fr 1fr;
+		gap: 2rem;
+	}
+
+	.feature-card {
+		padding: 2.5rem;
+		background: #ffffff;
+		border: 1px solid #e5e7eb;
+		border-radius: 16px;
+		transition: border-color 0.3s;
+	}
+
+	.feature-card:hover {
+		border-color: #3245ff;
+	}
+
+	@media (max-width: 768px) {
+		.feature-grid {
+			grid-template-columns: 1fr;
+		}
+		h1 {
+			font-size: 2.25rem;
+		}
+	}
+</style>

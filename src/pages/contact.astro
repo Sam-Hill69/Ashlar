@@ -1,0 +1,43 @@
+---
+import BaseLayout from "../layouts/Layout.astro";
+---
+
+<BaseLayout title="Contact">
+    <h1>Let's Build a Solid Foundation</h1>
+    
+    <div class="contact-grid">
+        <section class="contact-info">
+            <h3>Reliable Support</h3>
+            <p>From troubleshooting to long-term maintenance, we ensure your operations remain uninterrupted.</p>
+            
+            <h3>The Ashlar Advantage</h3>
+            <p>We combine technical rigor with a human-centric approach to ensure your systems are as reliable as they are advanced.</p>
+            
+            <div class="direct-contact">
+                <p><strong>Email:</strong> Sam.Hill@AshlarTechSolutions.com</p>
+                <p><strong>Text/Call:</strong> (507) 993-3704</p>
+            </div>
+        </section>
+</BaseLayout>
+
+<style>
+    .contact-grid {
+        display: grid;
+        grid-template-columns: 1fr 1fr;
+        gap: 4rem;
+        margin-top: 3rem;
+    }
+
+    .direct-contact {
+        margin-top: 2rem;
+        padding-top: 2rem;
+        border-top: 1px solid #e5e7eb;
+    }
+
+    @media (max-width: 768px) {
+        .contact-grid {
+            grid-template-columns: 1fr;
+            gap: 2rem;
+        }
+    }
+</style>

@@ -1,23 +1,54 @@
-<!doctype html>
+---
+import Navigation from "../components/Navigation.astro";
+const { title } = Astro.props;
+---
+
 <html lang="en">
 	<head>
-		<meta charset="UTF-8" />
-		<meta name="viewport" content="width=device-width" />
-		<link rel="icon" type="image/svg+xml" href="/favicon.svg" />
-		<link rel="icon" href="/favicon.ico" />
-		<meta name="generator" content={Astro.generator} />
-		<title>Astro Basics</title>
+		<meta charset="utf-8"/>
+		<link rel="icon" type="image/svg+xml" href="/assets/astro.svg"/>
+		<meta name="viewport" content="width=device-width"/>
+		<meta name="generator" content={Astro.generator}>
+		<title>Ashlar Tech Solutions | {title}</title>
 	</head>
 	<body>
-		<slot />
+		<Navigation/>
+		<main class="container">
+			<slot />
+		</main>
+
+		<style is:global>
+			:root {
+				--primary: #3245ff;
+				--secondary: #bc52ee;
+				--text-main: #111827;
+				--text-muted: #4b5563;
+			}
+			body {
+				font-family: Inter, Roboto, sans-serif; /* [cite: 26] */
+				margin: 0;
+				background-color: #ffffff;
+				color: var(--text-main);
+				line-height: 1.6;
+			}
+			.container {
+				max-width: 900px;
+				margin: 0 auto;
+				padding: 2rem 1rem;
+			}
+			h1 {
+				font-size: 2.5rem;
+				letter-spacing: -0.02em;
+				margin-bottom: 1rem;
+			}
+			h3 {
+				color: var(--primary);
+				margin-top: 2.5rem;
+			}
+			p {
+				color: var(--text-muted); /* [cite: 34] */
+				margin-bottom: 1.25rem;
+			}
+		</style>
 	</body>
 </html>
-
-<style>
-	html,
-	body {
-		margin: 0;
-		width: 100%;
-		height: 100%;
-	}
-</style>
